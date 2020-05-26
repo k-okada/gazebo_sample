@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+  <world name='default'>
+
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+
+    <!-- A global light source -->
+   <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <ambient>0.7 0.7 0.7 1</ambient>
+      <background>0.1 0.1 0.1 1</background>
+   </scene>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name="red_brick_1-1" >
+      <pose>-1.5 0 0.15 1.57 0 1.57</pose>
+      <include>
+        <uri>model://red_brick</uri>
+      </include>
+    </model>
+
+    <model name="red_brick_1-2" >
+      <pose>-2.1 0 0.15 1.57 0 1.57</pose>
+      <include>
+        <uri>model://red_brick</uri>
+      </include>
+    </model>
+
+    <model name="red_brick_1-3" >
+      <pose>-2.7 0 0.15 1.57 0 1.57</pose>
+      <include>
+        <uri>model://red_brick</uri>
+      </include>
+    </model>
+
+    <model name="red_brick_2-1" >
+      <pose>-1.5 -0.75 0.15 1.57 0 1.57</pose>
+      <include>
+        <uri>model://red_brick</uri>
+      </include>
+    </model>
+
+    <model name="red_brick_2-2" >
+      <pose>-2.1 -0.75 0.15 1.57 0 1.57</pose>
+      <include>
+        <uri>model://red_brick</uri>
+      </include>
+    </model>
+
+    <model name="red_brick_2-3" >
+      <pose>-2.7 -0.75 0.15 1.57 0 1.57</pose>
+      <include>
+        <uri>model://red_brick</uri>
+      </include>
+    </model>
+
+  </world>
+</sdf>

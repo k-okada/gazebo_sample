@@ -1,0 +1,16 @@
+<launch>
+  <arg name="world" default="1"/> <!-- 1 or 2 -->
+  <arg name="model" default="$(find gazebo_sample)/urdf/sample_robot.gazebo.xacro"/>
+
+  <include file="$(find gazebo_sample)/launch/world.launch">
+    <arg name="world" value="$(arg world)"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'"/>
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -model sample_robot -param robot_description"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+</launch>
